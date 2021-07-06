@@ -1,8 +1,14 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { useDispatch, useSelector } from 'react-redux'
 
 function App() {
+  const dispatch = useDispatch()
+  const selector = useSelector((state) => state)
+
+  console.log('users', selector.users)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -13,6 +19,7 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
+        <button onClick={() => dispatch()}>Sign In</button>
       </header>
     </div>
   )
